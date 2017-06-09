@@ -1,0 +1,34 @@
+﻿<div ng-controller="posterCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Seattle Events</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="media col-md-10 col-md-offset-1">
+                                <img style="height:100px; width:100px; border: solid black 1px;" class="d-flex mr-3" ng-src="{{data.curr_event.images[0].url}}" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h4 class="mt-0">{{data.curr_event.artist}}</h4>
+                                    <ul>
+                                        <li>Event Name: {{data.curr_event.artist}}</li>
+                                        <li>Venue: {{data.curr_event.venue.name}}</li>
+                                        <li>Pricing: ${{data.curr_event.pricing[0].min}} to ${{data.curr_event.pricing[0].max}}</li>
+                                        <li><a href="{{data.curr_event.link}}" target="_blank">Tickets Link</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Change this to a button or input when using this as a form -->
+                        <div class="row">
+                            <button ng-click="nextWrapper()" class="btn btn-lg btn-success">Like</button>
+                            <button ng-click="nextWrapper()" class="btn btn-lg btn-danger">Dislike</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

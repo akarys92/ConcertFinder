@@ -1,0 +1,26 @@
+<div ng-controller="homeCtrl">
+    <button ng-click="logout()">Logout</button>
+    <button ng-click="nextEvent()">Next!</button>
+    <button ng-click="debug = !debug">Debug</button>
+    
+    <!--<poster-comp data="data" currEvent="currEvent" update="update(key, value)"></poster-comp>-->
+    <div ng-show="data.events.length > 0">
+        <poster-comp data="data" getNext="nextEvent()" update="update(key, value)"></poster-comp>
+    </div>
+    <div ng-show="data.events.length < 1">
+        No more items :(
+        <button ng-click="getEvents()">Get Events</button>
+    </div>
+
+    <div ng-show="debug">
+        <div>
+            <div ng-repeat="event in data.events">
+                {{event}}
+            </div>
+        </div>
+        <div>
+            [<div ng-repeat="artist in data.artists">"{{track}}",</div>]
+        </div>
+    </div>
+        
+</div>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <base href="/">
+    </head>
+    <body>
+      <!-- Styling -->
+        <!-- Bootstrap Core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- MetisMenu CSS -->
+        <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="vendor/sb-admin-2.min.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <!-- END Styling -->
+
+        <div ng-app="finderApp">
+            <div ng-controller="dataCtrl">
+                <div ng-show="!state.spotify_access_token">
+                    <login-comp update="updateState(key, value)"></login-comp>
+                </div>
+                <div ng-show="state.spotify_access_token">
+                    <home-comp update="updateState(key, value)" data="state" token="state.spotify_access_token"></home-comp>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vendor -->
+        <script src="vendor/angular.min.js"></script>
+        <!-- jQuery -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="vendor/metisMenu/metisMenu.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="vendor/sb-admin-2.min.js"></script>
+        <!-- App -->
+        <script src="scripts/finderApp.js"></script>
+        <!-- Controllers -->
+        <script src="scripts/controllers/data.controller.js"></script>
+        <!-- Components -->
+        <script src="scripts/login_component/login.directive.js"></script>
+        <script src="scripts/home_component/home.directive.js"></script>
+        <script src="scripts/poster_component/poster.directive.js"></script>
+        <!-- Services -->
+        <script src="scripts/services/spotify_login.service.js"></script>
+        <script src="scripts/services/spotify.service.js"></script>
+        <script src="scripts/services/events.service.js"></script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+﻿body {
+}
+.spotify-login-logo {
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.spotify-login-button {
+    background-color: #1DB954;
+}
